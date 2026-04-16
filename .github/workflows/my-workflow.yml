@@ -7,9 +7,15 @@ on:
         description: 'Run tests after installation'
         required: false
         type: boolean
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches:
+      - main
+    
 
 jobs:
-  install:
+
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,4 +35,4 @@ jobs:
 
     - name: Test application
       run: npm test
-      if: ${{ github.event.inputs.test_run == 'true' }}
+      if: ${{ github.event.inputs.test_run == 'true' || github.event_name == 'pull_request' }}
