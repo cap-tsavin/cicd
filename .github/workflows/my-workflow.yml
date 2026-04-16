@@ -14,7 +14,8 @@ on:
     
 
 jobs:
-  install:
+
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
