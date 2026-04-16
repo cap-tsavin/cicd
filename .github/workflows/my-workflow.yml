@@ -7,6 +7,11 @@ on:
         description: 'Run tests after installation'
         required: false
         type: boolean
+  pull_request:
+    types: [opened, reopened]
+    branches:
+      - main
+    
 
 jobs:
   install:
