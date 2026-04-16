@@ -34,4 +34,4 @@ jobs:
 
     - name: Test application
       run: npm test
-      if: ${{ github.event.inputs.test_run == 'true' }}
+      if: ${{ github.event.inputs.test_run == 'true' || github.event_name == 'pull_request' }}
