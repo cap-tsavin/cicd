@@ -8,7 +8,7 @@ on:
         required: false
         type: boolean
   pull_request:
-    types: [opened, reopened, edited]
+    types: [opened, reopened, synchronize]
     branches:
       - main
     
