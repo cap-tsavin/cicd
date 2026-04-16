@@ -2,6 +2,11 @@ name: Manual install
 
 on:
   workflow_dispatch:
+    inputs:
+      test_run:
+        description: 'Run tests after installation'
+        required: false
+        type: boolean
 
 jobs:
   install:
@@ -24,3 +29,4 @@ jobs:
 
     - name: Test application
       run: npm test
+      if: ${{ github.event.inputs.test_run == 'true' }}
